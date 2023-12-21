@@ -3,7 +3,7 @@ import { defineComponent, ref } from "vue";
 import s from './Welcome.module.scss'
 import logo from '../assets/icons/mangosteen.svg'
 
-export const welcome = defineComponent({
+export const Welcome = defineComponent({
   setup(props, context) {
     return () => (<div class={s.wrapper}>
       <header>
