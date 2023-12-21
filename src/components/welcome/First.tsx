@@ -20,3 +20,5 @@ export const First = defineComponent({
     );
   }
 })
+
+First.displayName = 'First'
