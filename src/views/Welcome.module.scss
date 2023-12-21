@@ -1,8 +1,9 @@
 .wrapper {
-  height: 100vh;
+  height: calc(100vh - var(--welcome-nav-height));
   display: flex;
   flex-direction: column;
-  background-image: linear-gradient(to bottom, #a78ae7 0%, #becefb 100%);
+  background-image: linear-gradient(to bottom, var(--welcome-bg-start) 0%, var(--welcome-bg-end) 100%);
+  margin-bottom: var(--welcome-nav-height);
 
   >header {
     flex-shrink: 0;
@@ -12,7 +13,8 @@
     align-items: center;
     padding-top: 66px;
     color: #6236c2;
-    >h1{
+
+    >h1 {
       margin-top: 8px;
     }
   }

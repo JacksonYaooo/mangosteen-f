@@ -12,9 +12,9 @@ export const First = defineComponent({
           <h2>会挣钱<br/>还要会省钱</h2>
         </div>
         <div class={s.actions}>
-          <RouterLink class={s.fake} to="/start">跳过</RouterLink>
+          <RouterLink class={s.fake} to="/">跳过</RouterLink>
           <RouterLink to="/welcome/2">下一页</RouterLink>
-          <RouterLink to="/start">跳过</RouterLink>
+          <RouterLink to="/">跳过</RouterLink>
         </div>
       </div>
     );
