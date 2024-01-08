@@ -7,10 +7,17 @@
 }
 
 .mangosteen {
-  width: 128px;
-  height: 128px;
+  width: 128px !important;
+  height: 128px !important;
 
   &_wrapper {
-    padding: 160px 0;
+    padding: 120px 0;
   }
+}
+
+.navIcon {
+  width: 30px !important;
+  height: 30px !important;
+  position: relative;
+  top: 2px;
 }
