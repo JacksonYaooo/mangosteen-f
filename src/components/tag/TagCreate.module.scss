@@ -11,11 +11,13 @@
   margin-top: 8px;
 }
 
-.formLabel {}
-
 .formItem {
   min-height: var(--input-min-height);
   max-width: 100%;
+
+  &.button{
+    width: 100%;
+  }
 
   &.input {
     flex-grow: 1;
@@ -86,8 +88,6 @@
       }
     }
   }
-
-  &_name {}
 
   &_value {
     display: flex;
