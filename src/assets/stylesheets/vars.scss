@@ -29,6 +29,6 @@
   --date-text: #999999;
   --button-bg: white;
   --button-bg-important: #b4b1f2;
-  --button-text-clear: #4f8b43;
+  --button-text-clear: var(--amount-text);
   --button-text-important:white;
 }
