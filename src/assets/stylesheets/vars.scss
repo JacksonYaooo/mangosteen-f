@@ -1,6 +1,8 @@
 :root {
   --amount-text: #53A867;
   --button-bg-important: #b4b1f2;
+  --button-bg-normal: white;
+  --button-bg-danger: #df5050;
   --button-bg: white;
   --button-border-color: #ddd;
   --button-font-size: 18px;
@@ -13,7 +15,7 @@
   --date-text: #999999;
   --emoji-nav-text-selected: #333;
   --emoji-nav-text: #999;
-  --error-color: #E10505;
+  --error-color: #df5050;
   --float-button-bg: var(--button-start-bg);
   --float-button-text: white;
   --input-border-color: var(--button-start-bg);
