@@ -22,7 +22,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api/v1': {
-        target: 'http://127.0.0.1:3000/',
+        target: 'http://8.130.47.85:3000/',
       }
     }
   },
