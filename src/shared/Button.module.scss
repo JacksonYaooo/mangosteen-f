@@ -11,6 +11,11 @@
     background: var(--button-bg-important);
   }
 
+  &[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
   &.normal {
     background: var(--button-bg-normal);
   }
