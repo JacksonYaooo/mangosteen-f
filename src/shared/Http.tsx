@@ -45,5 +45,5 @@ http.instance.interceptors.response.use(response => {
       alert('请求太频繁')
     }
   }
-  throw error
+  // throw error
 })

@@ -8,6 +8,7 @@ import { hasError, validate } from "../shared/validate";
 import { http } from "../shared/Http";
 import { useBool } from "../hooks/useBool";
 import { useRoute, useRouter } from "vue-router";
+import { refreshMe } from "../shared/me";
 
 export const SignInPage = defineComponent({
   setup(props, context) {
@@ -40,6 +41,7 @@ export const SignInPage = defineComponent({
         // const returnTo = localStorage.getItem('returnTo')
         // router.push('/sign_in?return_to=' + encodeURIComponent(route.fullPath))
         const returnTo = route.query.return_to?.toString()
+        refreshMe()
         router.push(returnTo || '/')
       }
     }
