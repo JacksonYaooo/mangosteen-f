@@ -1,23 +1,36 @@
 import { PropType, defineComponent } from "vue";
-import s from './Icon.module.scss';
+import s from "./Icon.module.scss";
 
-export type IconName = 'add' | 'chart' | 'clock' | 'cloud' | 'mangosteen' | 'pig' | 'menu' | 'charts' | 'notify' | 'export' | 'left' | 'notes' | 'date'
+export type IconName =
+  | "add"
+  | "chart"
+  | "clock"
+  | "cloud"
+  | "mangosteen"
+  | "pig"
+  | "menu"
+  | "charts"
+  | "notify"
+  | "export"
+  | "left"
+  | "notes"
+  | "date";
 
 export const Icon = defineComponent({
   props: {
     name: {
       type: String as PropType<IconName>,
-      require: true
+      require: true,
     },
     onClick: {
-      type: Function as PropType<(e: MouseEvent) => void>
-    }
+      type: Function as PropType<(e: MouseEvent) => void>,
+    },
   },
   setup(props, context) {
     return () => (
       <svg class={s.icon} onClick={props.onClick}>
-        <use xlinkHref={'#' + props.name}></use>
+        <use xlinkHref={"#" + props.name}></use>
       </svg>
     );
-  }
-})
+  },
+});

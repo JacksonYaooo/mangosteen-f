@@ -33,7 +33,7 @@
     }
   }
 
-  &.select{
+  &.select {
     border: 1px solid var(--input-border-color);
     border-radius: var(--input-radius);
     padding: 0 8px;
@@ -52,7 +52,7 @@
     display: flex;
     margin-top: 4px;
 
-    >* {
+    > * {
       flex-grow: 1;
     }
   }

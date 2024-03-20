@@ -1,9 +1,9 @@
-import { SkipFeatures } from '../../shared/SkipFeatures';
-import s from './welcome.module.scss';
-import { RouterLink } from 'vue-router';
+import { SkipFeatures } from "../../shared/SkipFeatures";
+import s from "./welcome.module.scss";
+import { RouterLink } from "vue-router";
 const onClick = () => {
-  localStorage.setItem('skipFeatures', 'yes')
-}
+  localStorage.setItem("skipFeatures", "yes");
+};
 export const ForthActions = () => (
   <div class={s.actions}>
     <SkipFeatures class={s.fake} />
@@ -12,6 +12,6 @@ export const ForthActions = () => (
     </span>
     <SkipFeatures />
   </div>
-)
+);
 
-ForthActions.displayName = 'ForthActions'
+ForthActions.displayName = "ForthActions";

@@ -12,7 +12,7 @@
     top: 0;
     background: var(--navbar-bg-end);
 
-    >li {
+    > li {
       flex-grow: 1;
       flex-shrink: 0;
       padding: 12px 0;
@@ -21,7 +21,7 @@
         position: relative;
 
         &::after {
-          content: '';
+          content: "";
           display: block;
           position: absolute;
           bottom: 0;
