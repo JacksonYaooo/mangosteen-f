@@ -2,12 +2,15 @@ import { PropType, defineComponent, ref } from "vue";
 import s from "./InputPad.module.scss";
 import { Time } from '../../shared/time';
 import { Icon } from "../../shared/Icon";
-import { DatetimePicker, Popup, NumberKeyboard } from 'vant';
+import { DatetimePicker, Popup } from 'vant';
 
 export const InputPad = defineComponent({
   props: {
     happenAt: String,
-    amount: Number
+    amount: Number,
+    onSubmit: {
+      type: Function as PropType<() => void>
+    }
   },
   setup(props, context) {
     const appendText = (n: number | string) => {
@@ -51,8 +54,10 @@ export const InputPad = defineComponent({
       { text: '清空', onClick: () => { refAmount.value = '0' } },
       {
         text: '提交',
-        onClick: () => context.emit('update:amount',
-          parseFloat(refAmount.value) * 100)
+        onClick: () => {
+          context.emit('update:amount',parseFloat(refAmount.value) * 100)
+          props.onSubmit?.()
+        }
       },
     ]
     const refDatePickerVisible = ref(false)
