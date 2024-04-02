@@ -68,10 +68,14 @@ export const Tags = defineComponent({
             <div
               class={[s.tag, props.selected === tag.id ? s.selected : ""]}
               onClick={() => onSelect(tag)}
-              onTouchstart={(e) => onTouchStart(e, tag)}
-              onTouchend={onTouchEnd}
             >
-              <div class={s.sign}>{tag.sign}</div>
+              <div
+                class={s.sign}
+                onTouchstart={(e) => onTouchStart(e, tag)}
+                onTouchend={onTouchEnd}
+              >
+                {tag.sign}
+              </div>
               <div class={s.name}>{tag.name}</div>
             </div>
           ))}
