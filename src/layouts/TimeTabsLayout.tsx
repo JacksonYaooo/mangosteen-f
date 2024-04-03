@@ -1,8 +1,7 @@
 import { Overlay } from "vant";
-import { DefineComponent, PropType, defineComponent, reactive, ref } from "vue";
+import { PropType, defineComponent, reactive, ref } from "vue";
 import s from "./TimeTabsLayout.module.scss";
 import { Time } from "../shared/time";
-import { ItemSummary } from "../components/item/ItemSummary";
 import { Form, FormItem } from "../shared/Form";
 import { OverlayIcon } from "../shared/Overlay";
 import { MainLayout } from "./MainLayout";
@@ -12,11 +11,11 @@ const demo = defineComponent({
   props: {
     startDate: {
       type: String as PropType<string>,
-      required: true,
+      required: false,
     },
     endDate: {
       type: String as PropType<string>,
-      required: true,
+      required: false,
     },
   },
 });
@@ -31,10 +30,10 @@ export const TimeTabsLayout = defineComponent({
   setup(props, context) {
     const refSelected = ref("本月");
     const time = new Time();
-    const customTime = reactive({
-      start: new Time().format(),
-      end: new Time().format(),
-    });
+    const customTime = reactive<{
+      start?: string;
+      end?: string;
+    }>({});
     const timeList = [
       {
         start: time.firstDayOfMonth(),
