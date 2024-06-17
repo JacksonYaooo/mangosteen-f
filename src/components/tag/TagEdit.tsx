@@ -7,6 +7,7 @@ import s from "./Tag.module.scss";
 import { BackIcon } from "../../shared/BackIcon";
 import { Dialog } from "vant";
 import { http } from "../../shared/Http";
+import axios from "axios";
 
 export const TagEdit = defineComponent({
   setup(props, context) {
