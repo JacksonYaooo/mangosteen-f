@@ -48,7 +48,8 @@ export const Charts = defineComponent({
         kind: kind.value,
         group_by: 'happen_at',
       }, {
-        _mock: 'itemSummary'
+        _mock: 'itemSummary',
+        _autoLoading: true,
       })
       // console.log('response.data')
       // console.log(response.data)

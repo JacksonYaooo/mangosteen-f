@@ -17,17 +17,18 @@ export const TagEdit = defineComponent({
       return () => <div>id 不存在</div>;
     }
     const router = useRouter()
-    const onError = ()=>{
-      Dialog.alert({ title:'提示',message:'删除失败' })
+    const onError = () => {
+      Dialog.alert({ title: '提示', message: '删除失败' })
     }
-    const onDelete = async (options?: {withItems?: boolean})=>{
+    const onDelete = async (options?: { withItems?: boolean }) => {
       await Dialog.confirm({
-        title:'确认',
-        message:'确定删除吗？'
+        title: '确认',
+        message: '确定删除吗？'
       })
       await http.delete(`/tags/${numberId}`, {
         withItems: options?.withItems ? 'true' : 'false'
-      }).catch(onError)
+      }, { _autoLoading: true })
+        .catch(onError)
       router.back()
     }
     return () => (
