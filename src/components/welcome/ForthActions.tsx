@@ -8,10 +8,10 @@ export const ForthActions = () => (
   <div class={s.actions}>
     <SkipFeatures class={s.fake} />
     <span onClick={onClick}>
-      <RouterLink to="/start">完成</RouterLink>
+      <RouterLink to="/items">完成</RouterLink>
     </span>
     <SkipFeatures />
   </div>
 );
 
-ForthActions.displayName = "ForthActions";
+ForthActions.displayName = 'ForthActions'

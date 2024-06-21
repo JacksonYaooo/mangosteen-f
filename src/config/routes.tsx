@@ -8,7 +8,6 @@ import { ThirdActions } from "../components/welcome/ThirdActions";
 import { Forth } from "../components/welcome/Forth";
 import { ForthActions } from "../components/welcome/ForthActions";
 import { Welcome } from "../views/Welcome";
-import { StartPage } from "../views/StartPage";
 import { ItemPage } from "../views/ItemPage";
 import { ItemList } from "../components/item/ItemList";
 import { ItemCreate } from "../components/item/ItemCreate";
@@ -17,7 +16,6 @@ import { TagCreate } from "../components/tag/TagCreate";
 import { TagEdit } from "../components/tag/TagEdit";
 import { SignInPage } from "../views/SignInPage";
 import { StatisticsPage } from "../views/StatisticsPage";
-import { http } from "../shared/Http";
 import { ComingSoon } from "../shared/ComingSoon";
 
 export const routes: RouteRecordRaw[] = [
@@ -26,7 +24,7 @@ export const routes: RouteRecordRaw[] = [
     path: "/welcome",
     component: Welcome,
     beforeEnter: (to, from, next) => {
-      localStorage.getItem("skipFeatures") === "yes" ? next("/start") : next();
+      localStorage.getItem("skipFeatures") === "yes" ? next("/items") : next();
     },
     children: [
       { path: "", redirect: "/welcome/1" },
@@ -52,7 +50,6 @@ export const routes: RouteRecordRaw[] = [
       },
     ],
   },
-  { path: "/start", component: StartPage },
   {
     path: "/items", component: ItemPage,
     children: [
