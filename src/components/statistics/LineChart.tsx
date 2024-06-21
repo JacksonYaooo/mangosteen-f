@@ -1,10 +1,8 @@
-import { defineComponent, onMounted, PropType, ref, watch } from "vue";
-import s from "./LineChart.module.scss";
-import * as echarts from "echarts";
-
+import { defineComponent, onMounted, onUpdated, PropType, ref, watch } from 'vue';
+import s from './LineChart.module.scss';
+import * as echarts from 'echarts';
 import { Time } from '../../shared/time';
 import { getMoney } from '../../shared/Money';
-
 const echartsOption = {
   tooltip: {
     show: true,
@@ -51,11 +49,8 @@ export const LineChart = defineComponent({
     const refDiv = ref<HTMLDivElement>()
     let chart: echarts.ECharts | undefined = undefined
 
-
     onMounted(() => {
-      if (refDiv.value === undefined) {
-        return;
-      }
+      if (refDiv.value === undefined) { return }
       // 基于准备好的dom，初始化echarts实例
       chart = echarts.init(refDiv.value);
       // 绘制图表
@@ -79,4 +74,3 @@ export const LineChart = defineComponent({
     )
   }
 })
-
